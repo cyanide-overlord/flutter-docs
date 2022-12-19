@@ -1,0 +1,21 @@
+name: Build apk
+
+on: [push]
+
+jobs:
+
+  generate-apk:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: wget https://master-api.flutter.dev/offline/flutter.docset.tar.gz
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+           name: flutter docs
+           path: flutter.docset.tar.gz
+           
+
+
+
